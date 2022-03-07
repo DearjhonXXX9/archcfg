@@ -108,8 +108,8 @@ set exrc                                    " enable usage of additional .vimrc 
 set secure                                  " prohibit .vimrc files to execute shell, create files, etc...
 
 " Additional mappings for Esc (useful for MacBook with touch bar)
-inoremap jj <Esc>
-inoremap jk <Esc>
+"inoremap jj <Esc>
+"inoremap jk <Esc>
 
 "=====================================================
 "" Tabs / Buffers settings
@@ -316,7 +316,7 @@ let g:autoformat_verbosemode=1
 au BufWrite * :Autoformat
 
 
-" ====================================================
+" ============================================`========
 " 搜索时大小写不敏感
 set ignorecase
 " vim 自身命令行模式智能补全
