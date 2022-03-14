@@ -322,4 +322,4 @@ set ignorecase
 " vim 自身命令行模式智能补全
 set wildmenu
 
-
+autocmd vimenter * NERDTree ~/Documents/code/python
