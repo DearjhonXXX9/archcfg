@@ -1,24 +1,9 @@
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-"                                                                              "
-"                       __   _ _ _ __ ___  _ __ ___                            "
-"                       \ \ / / | '_ ` _ \| '__/ __|                           "
-"                        \ V /| | | | | | | | | (__                            "
-"                         \_/ |_|_| |_| |_|_|  \___|                           "
-"                                                                              "
-"                                                                              "
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-let $vimhome=fnamemodify(resolve(expand("~/.vimrc")), ':p:h')
-let $vundle=$vimhome."/bundle/Vundle.vim"
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Be iMproved
-set nocompatible
-
-"=====================================================
-"" Vundle settings
-"=====================================================
-filetype off
-set rtp+=$vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
     Plugin 'VundleVim/Vundle.vim'               " let Vundle manage Vundle, required
@@ -36,7 +21,7 @@ call vundle#begin()
     Plugin 'rosenfeld/conque-term'              " Consoles as buffers
     Plugin 'tpope/vim-surround'                 " 删除，修改，插入成对符号
     Plugin 'flazz/vim-colorschemes'             " Colorschemes
-
+   
     "-------------------=== Snippets support ===--------------------
     Plugin 'garbas/vim-snipmate'                " 补全代码
     Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1 按函数解释文件并自动缓存文件
@@ -50,13 +35,8 @@ call vundle#begin()
     Plugin 'tpope/vim-commentary'               " 注释插件   gc  .  为快捷键
     Plugin 'mitsuhiko/vim-sparkup'              " 压缩 HTML 格式的解析器 
     Plugin 'Rykka/riv.vim'                      " Riv 是一个 vim 插件，用于使用 reStructuredText_ 做笔记。 
-   " Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
-    Plugin 'ncm2/ncm2'
-    Plugin 'ncm2/ncm2-path'
-    Plugin 'ncm2/ncm2-bufword' 		 " 代码补全插件	
-    Plugin 'ncm2/ncm2-jedi'
-    Plugin 'ncm2/ncm2-vim'
-    Plugin 'roxma/nvim-yarp'
+    Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
+    
 
     "-------------------=== Python  ===-----------------------------
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式 等待我探索
@@ -275,36 +255,35 @@ let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
 let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python3']
 
-" YouCompleteMe
-"set completeopt-=preview
-
-"let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf.py'
-"let g:ycm_confirm_extra_conf=0
-
-"nmap <leader>g :YcmCompleter GoTo<CR>
-"nmap <leader>d :YcmCompleter GoToDefinition<CR>
-
-
-
-" ====================================================
-" ncm2
-" ====================================================
-autocmd BufEnter * call ncm2#enable_for_buffer()
-" 补全模式,具体详情请看下文
-set completeopt=menuone,noinsert,preview
-set shortmess+=c
-inoremap <c-c> <ESC>
-" 延迟弹窗,这样提示更加流畅
-let ncm2#popup_delay = 5
-"输入几个字母开始提醒:[[最小优先级,最小长度]]
-"如果是输入的是[[1,3],[7,2]],那么优先级在1-6之间,会在输入3个字符弹出,如果大于等于7,则2个字符弹出----优先级概念请参考文档中 ncm2-priority 
-let ncm2#complete_length = [[1, 1]]
-"模糊匹配模式,详情请输入:help ncm2查看相关文档
-let g:ncm2#matcher = 'substrfuzzy'
-"使用tab键向下选择弹框菜单
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>" 
-"使用shift+tab键向上选择弹窗菜单,这里不设置因为笔记本比较难操作.如果向下太多我通常习惯使用Backspace键再重新操作一遍
-"inoremap <expr> <S> pumvisible() ? "\<C-p>" : "\<S>"
+" ======================================================
+" Youcompleteme
+" ======================================================
+"youcompleteme  默认tab  s-tab 和自动补全冲突
+""let g:ycm_key_list_select_completion=['<c-n>']
+let g:ycm_key_list_select_completion = ['<Down>']
+"let g:ycm_key_list_previous_completion=['<c-p>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+"关闭加载.ycm_extra_conf.py提示
+let g:ycm_confirm_extra_conf=0
+" 开启 YCM 基于标签引擎
+let g:ycm_collect_identifiers_from_tags_files=1
+" 从第2个键入字符就开始罗列匹配项
+let g:ycm_min_num_of_chars_for_completion=2
+" 禁止缓存匹配项,每次都重新生成匹配项
+let g:ycm_cache_omnifunc=0
+" 语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+"force recomile with syntastic
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+"nnoremap <leader>lo :lopen<CR> "open locationlist
+"nnoremap <leader>lc :lclose<CR>    "close locationlist
+inoremap <leader><leader> <C-x><C-o>
+"在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+"在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+"注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
 " ====================================================
 "autoformat
