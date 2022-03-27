@@ -8,12 +8,12 @@ gf             		跳转到文件中  比如1.txt
 ctrl ]    ctrl t     	跳转ctags定义  返回原文件   " 先在源代码目录  ctags -R
 
 K			pythonmode  跳转到函数定义
-
+shift tab		被改为tab键	
 :bn			下一个文件
 :bp			上一个文件
+:bd			删除buffer
 
-
-
+f9 在文件间跳转
 ctrl 6			在两个文件中跳转
 ===============================================
 nerdtree
