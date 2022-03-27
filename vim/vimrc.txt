@@ -1,4 +1,3 @@
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -118,7 +117,9 @@ let g:airline_powerline_fonts=1
 "" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
-let g:tagbar_width=42
+let g:tagbar_width=15
+
+
 autocmd BufEnter *.py :call tagbar#autoopen(0)
 
 "=====================================================
@@ -302,3 +303,7 @@ set ignorecase
 set wildmenu
 
 autocmd vimenter * NERDTree ~/Documents/code/python
+
+" 忽略插入模式的行间跳跃，为了实现文件间跳转
+inoremap <C-o> <nop>
+inoremap <C-i> <nop>
