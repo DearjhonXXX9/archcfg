@@ -117,7 +117,7 @@ let g:airline_powerline_fonts=1
 "" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
-let g:tagbar_width=15
+let g:tagbar_width=20
 
 
 autocmd BufEnter *.py :call tagbar#autoopen(0)
@@ -126,7 +126,7 @@ autocmd BufEnter *.py :call tagbar#autoopen(0)
 "" NERDTree settings
 "=====================================================
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
-let NERDTreeWinSize=40
+let NERDTreeWinSize=20
 autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
 nmap " :NERDTreeToggle<CR>
 " 如果 NERDTree 是唯一选项卡中剩余的唯一窗口，则退出 Vim。
@@ -260,6 +260,7 @@ let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python3']
 " Youcompleteme
 " ======================================================
 "youcompleteme  默认tab  s-tab 和自动补全冲突
+" 所以本配置 tab键是  shift+tab
 ""let g:ycm_key_list_select_completion=['<c-n>']
 let g:ycm_key_list_select_completion = ['<Down>']
 "let g:ycm_key_list_previous_completion=['<c-p>']
