@@ -38,3 +38,9 @@ git push -u origin main
 
 这里的密码用token密码  在settings里的developers settings   personal access tokens  要把这个密码记下来  因为刷新网页就会消失
 =================================================
+
+
+避免每次git push 都要输入密码的方法
+git remote rm origin
+git remote add origin git@github.com:whbing147/learngit.git
+git push -u origin master
