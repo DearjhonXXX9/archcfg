@@ -17,15 +17,15 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline-themes'     " 上面插件的主题
     Plugin 'Lokaltog/powerline'                 " 状态行插件
     Plugin 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
-    Plugin 'rosenfeld/conque-term'              " Consoles as buffers
+    "Plugin 'rosenfeld/conque-term'              " Consoles as buffers
     
     Plugin 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
    
     "-------------------=== Snippets support ===--------------------
     
-    Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1 按函数解释文件并自动缓存文件
+    Plugin 'MarcWeber/vim-addon-mw-utils'       "dependencies #1 按函数解释文件并自动缓存文件
     
-    
+    Plugin 'luochen1990/rainbow'		 "彩虹括号s
     Plugin 'jiangmiao/auto-pairs'		 "自动补全括号，引号等
     Plugin 'Chiel92/vim-autoformat'		 "格式化代码   使用f3 
     
@@ -33,11 +33,11 @@ call vundle#begin()
     Plugin 'tpope/vim-commentary'               " 注释插件   gc  .  为快捷键
     Plugin 'mitsuhiko/vim-sparkup'              " 压缩 HTML 格式的解析器 
      
-    Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
+    Plugin 'Valloric/YouCompleteMe'             " ycm 可惜不能我还没搞懂怎么对第三方包实现补全
     
 
     "-------------------=== Python  ===-----------------------------
-    Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式 等待我探索
+    Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式 
     Plugin 'scrooloose/syntastic'               " 错误检查
 
 
@@ -314,3 +314,30 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "F3自动格式化代码并保存
 noremap <F3> :Autoformat<CR>:w<CR>
 let g:autoformat_verbosemode=1
+" ====================================================
+" rainbow 彩虹括号
+" =====================================================
+"rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+\   'operators': '_,_',
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\       '*': {},
+\       'tex': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\       },
+\       'lisp': {
+\           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\       },
+\       'vim': {
+\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\       },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\       'css': 0,
+\   }
+\}
