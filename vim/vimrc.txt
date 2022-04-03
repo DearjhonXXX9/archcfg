@@ -18,22 +18,21 @@ call vundle#begin()
     Plugin 'Lokaltog/powerline'                 " 状态行插件
     Plugin 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
     Plugin 'rosenfeld/conque-term'              " Consoles as buffers
-    Plugin 'tpope/vim-surround'                 " 删除，修改，插入成对符号
-    Plugin 'flazz/vim-colorschemes'             " Colorschemes
+    
+    Plugin 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
    
     "-------------------=== Snippets support ===--------------------
-    Plugin 'garbas/vim-snipmate'                " 补全代码
+    
     Plugin 'MarcWeber/vim-addon-mw-utils'       " dependencies #1 按函数解释文件并自动缓存文件
-    Plugin 'tomtom/tlib_vim'                    " dependencies #2
-    Plugin 'honza/vim-snippets'                 " snippets repo
+    
+    
     Plugin 'jiangmiao/auto-pairs'		 "自动补全括号，引号等
     Plugin 'Chiel92/vim-autoformat'		 "格式化代码   使用f3 
-    
     
     "-------------------=== Languages support ===-------------------
     Plugin 'tpope/vim-commentary'               " 注释插件   gc  .  为快捷键
     Plugin 'mitsuhiko/vim-sparkup'              " 压缩 HTML 格式的解析器 
-    Plugin 'Rykka/riv.vim'                      " Riv 是一个 vim 插件，用于使用 reStructuredText_ 做笔记。 
+     
     Plugin 'Valloric/YouCompleteMe'             " Autocomplete plugin
     
 
@@ -56,7 +55,7 @@ filetype plugin indent on
 syntax enable                               " syntax highlight
 
 set t_Co=256                                " set 256 colors
-colorscheme wombat256mod                    " set color scheme
+colorscheme angr               	    " set color scheme
 
 set number                                  " show line numbers
 set ruler
@@ -163,10 +162,7 @@ nmap <C-n> :call ToggleNerdTree()<CR>
 
 
 "=====================================================
-"" SnipMate settings
-"=====================================================
-let g:snippets_dir='~/.vim/vim-snippets/snippets'
-let g:snipMate = {'snippet_version' : 1}
+
 
 "=====================================================
 "" Riv.vim settings
@@ -276,7 +272,7 @@ let g:ycm_cache_omnifunc=0
 " 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
 "force recomile with syntastic
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+"nnoremap <F2> :YcmForceCompileAndDiagnostics<CR>
 "nnoremap <leader>lo :lopen<CR> "open locationlist
 "nnoremap <leader>lc :lclose<CR>    "close locationlist
 inoremap <leader><leader> <C-x><C-o>
@@ -291,10 +287,10 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "autoformat
 " ====================================================
 "F3自动格式化代码
-noremap <F3> :Autoformat<CR>
-let g:autoformat_verbosemode=1
+"noremap <F3> :Autoformat<CR>
+"let g:autoformat_verbosemode=1
 "保存时自动格式化代码，针对所有支持的文件
-au BufWrite * :Autoformat
+"au BufWrite * :Autoformat
 
 
 " ============================================`========
@@ -308,3 +304,13 @@ autocmd vimenter * NERDTree ~/Documents/code/python
 " 忽略插入模式的行间跳跃，为了实现文件间跳转
 inoremap <C-o> <nop>
 inoremap <C-i> <nop>
+
+
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" ===================================================
+" autoformat
+"=====================================================
+"F3自动格式化代码并保存
+noremap <F3> :Autoformat<CR>:w<CR>
+let g:autoformat_verbosemode=1
