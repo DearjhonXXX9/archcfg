@@ -33,13 +33,13 @@ call vundle#begin()
     Plugin 'tpope/vim-commentary'               " 注释插件   gc  .  为快捷键
     Plugin 'mitsuhiko/vim-sparkup'              " 压缩 HTML 格式的解析器 
      
-    Plugin 'Valloric/YouCompleteMe'             " ycm 可惜不能我还没搞懂怎么对第三方包实现补全
+    Plugin 'Valloric/YouCompleteMe'             " ycm 
     
 
     "-------------------=== Python  ===-----------------------------
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式 
     Plugin 'scrooloose/syntastic'               " 错误检查
-
+    Plugin 'c.vim'
 
     
     
@@ -230,7 +230,7 @@ augroup vimrc_autocmds
 augroup END
 
 " code folding
-let g:pymode_folding=0
+let g:pymode_folding=1
 
 " pep8 indents
 let g:pymode_indent=1
@@ -245,13 +245,14 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_aggregate_errors=1
-let g:syntastic_loc_list_height=5
+let g:syntastic_loc_list_height=4
 let g:syntastic_error_symbol='X'
 let g:syntastic_style_error_symbol='X'
 let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
-let g:syntastic_python_checkers=['flake8', 'pydocstyle', 'python3']
-
+let g:syntastic_python_checkers=['flake8', 'pydocstyle']
+let g:syntastic_cpp_cpplint_exec = "cppcheck"
+let g:syntastic_cpp_checkers = ['cppcheck']
 " ======================================================
 " Youcompleteme
 " ======================================================
@@ -291,7 +292,9 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 0
 "let g:autoformat_verbosemode=1
 "保存时自动格式化代码，针对所有支持的文件
 "au BufWrite * :Autoformat
-
+" 这里要更改 环境变量 否则.local/bin里面的py用不了,自然无法格式化了
+"export PATH="/home/jack/.local/bin:$PATH"
+"export PATH="$PATH:/home/jack/.local/bin"   
 
 " ============================================`========
 " 搜索时大小写不敏感
@@ -314,6 +317,10 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "F3自动格式化代码并保存
 noremap <F3> :Autoformat<CR>:w<CR>
 let g:autoformat_verbosemode=1
+"let g:formatter_yapf_style = 'pep8'
+
+"export PATH="/home/jack/.local/bin:$PATH"
+ 25 export PATH="$PATH:/home/jack/.local/bin"   
 " ====================================================
 " rainbow 彩虹括号
 " =====================================================
@@ -341,3 +348,13 @@ let g:rainbow_conf = {
 \       'css': 0,
 \   }
 \}
+"================================================================================
+"  ==============================================================================
+
+"Vim 与系统剪切板共享
+set clipboard=unnamed
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至vim
+nmap <Leader>p "+p
+
