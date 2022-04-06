@@ -1,0 +1,15 @@
+env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" /usr/bin/deepin-wine5 winecfg
+
+
+fc-cache -vf
+更新字体缓存
+
+angr 
+aqua
+astronaut
+bandit
+
+
+
+-javaagent:/home/jack/ja-netfilter/ja-netfilter.jar
+
