@@ -11,7 +11,8 @@ call vundle#begin()
     Plugin 'scrooloose/nerdtree'                " 目录树插件
     Plugin 'majutsushi/tagbar'                  " 显示类，变量之类的标签插件
     Plugin 'kien/ctrlp.vim'                     " 模糊搜索文件 ctrl p
-
+    Plugin 'tpope/vim-markdown'			" markdown
+    Plugin 'instant-markdown/vim-instant-markdown' " 
     "-------------------=== Other ===-------------------------------
     Plugin 'bling/vim-airline'                  " 底部状态增强/美化插件
     Plugin 'vim-airline/vim-airline-themes'     " 上面插件的主题
@@ -20,7 +21,8 @@ call vundle#begin()
     "Plugin 'rosenfeld/conque-term'              " Consoles as buffers
     
     Plugin 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
-   
+    Plugin 'tpope/vim-fugitive'			"git 插件
+    Plugin 'fatih/vim-go'			"go
     "-------------------=== Snippets support ===--------------------
     
     Plugin 'MarcWeber/vim-addon-mw-utils'       "dependencies #1 按函数解释文件并自动缓存文件
@@ -40,6 +42,7 @@ call vundle#begin()
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式 
     Plugin 'scrooloose/syntastic'               " 错误检查
     Plugin 'c.vim'
+    "Plugin 'terryma/vim-multiple-cursors'	" vim多光标
 
     
     
@@ -107,7 +110,7 @@ set hlsearch	                            " highlight search results
 "=====================================================
 "" AirLine settings
 "=====================================================
-let g:airline_theme='badwolf'
+let g:airline_theme='ravenpower'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline_powerline_fonts=1
@@ -153,7 +156,7 @@ function! ToggleNerdTree()
   NERDTreeToggle
   set eventignore=
 endfunction
-nmap <C-n> :call ToggleNerdTree()<CR>
+nmap <C-\> :call ToggleNerdTree()<CR>
 
 
 
@@ -167,7 +170,7 @@ nmap <C-n> :call ToggleNerdTree()<CR>
 "=====================================================
 "" Riv.vim settings
 "=====================================================
-let g:riv_disable_folding=1
+let g:riv_disable_folding=0
 
 "=====================================================
 "" Python settings
@@ -230,7 +233,7 @@ augroup vimrc_autocmds
 augroup END
 
 " code folding
-let g:pymode_folding=1
+let g:pymode_folding=0
 
 " pep8 indents
 let g:pymode_indent=1
@@ -338,6 +341,17 @@ let g:rainbow_conf = {
 \   }
 \}
 "================================================================================
+"   Markdown
 "  ==============================================================================
-
-
+"取消注释以覆盖默认值 
+"let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_mermaid = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
