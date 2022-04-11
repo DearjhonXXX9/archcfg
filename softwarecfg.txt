@@ -11,5 +11,7 @@ bandit
 
 
 
--javaagent:/home/jack/ja-netfilter/ja-netfilter.jar
+-javaagent:~/ja-netfilter/ja-netfilter.jar
 
+sudo pacman -R $(pacman -Qdtq)          无用的包
+sudo pacman -Scc                        已下载的包
