@@ -15,3 +15,80 @@ bandit
 
 sudo pacman -R $(pacman -Qdtq)          无用的包
 sudo pacman -Scc                        已下载的包
+
+
+1.vim配置
+2.wineqq
+3.v2raya
+4.xunlei
+3.pycharm-profession
+4.baidudisk
+5.aliyunpan
+6.fcitx-sougoupinyin
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+
+export GTK_IM_MODULE=fcitx
+
+export QT_IM_MODULE=fcitx
+
+export XMODIFIERS="@im=fcitx"
+
+7.zotero                            文献管理
+
+8.wps-office-mui-zh-cn +   ttf-wps-fonts
+
+9.netease cloud music
+10.youdaodict
+11.minecraft
+12.obs-studio-tytan652
+13.etcher
+14.wemeet
+15.okular                           kde的文档查看器
+16.kate                             kde编辑器 功能强大
+17.kdeconnect
+18.gwenview                         kde图片查看器
+19.spectacle                        kde截图工具
+20.discover                         kde软件管理器
+
+
+
+
+
+
+
+
+===================
+软件源设置（详情见pacman_conf.txt文件）
+1.archlinuxcn
+
+[archlinuxcn]
+SigLevel = Optional TrustAll
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+
+之后
+
+sudo pacman -S archlinuxcn-keyring
+
+
+
+
+
+2.blackarch
+
+# Run https://blackarch.org/strap.sh as root and follow the instructions.
+$ curl -O https://blackarch.org/strap.sh
+
+# Verify the SHA1 sum
+$ echo 8bfe5a569ba7d3b055077a4e5ceada94119cccef strap.sh | sha1sum -c
+
+# Set execute bit
+$ chmod +x strap.sh
+
+# Run strap.sh
+$ sudo ./strap.sh
+
+# Enable multilib following https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib and run:
+$ sudo pacman -Syu
