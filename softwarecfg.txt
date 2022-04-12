@@ -1,13 +1,10 @@
-env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" /usr/bin/deepin-wine5 winecfg
+env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" /usr/bin/deepin-wine5 winecfg          调整wineqq  dpi
 
 
 fc-cache -vf
 更新字体缓存
 
-angr 
-aqua
-astronaut
-bandit
+
 
 
 
@@ -76,7 +73,7 @@ sudo pacman -S archlinuxcn-keyring
 
 
 
-2.blackarch
+2.blackarch  基于arch安装，添加源
 
 # Run https://blackarch.org/strap.sh as root and follow the instructions.
 $ curl -O https://blackarch.org/strap.sh
@@ -92,3 +89,23 @@ $ sudo ./strap.sh
 
 # Enable multilib following https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib and run:
 $ sudo pacman -Syu
+
+
+
+
+
+
+
+==============================================
+vim插件
+==============================================
+1.vim-youcompleteme-git
+
+（将 ~/.local/bin  添加到系统变量）
+/etc/profile
+~/.zshrc   || ~/.bashrc
+
+export PATH=/home/jack/.local/bin:$PATH
+
+2.instant-markdown-d                markdown-instant-preview
+3.
