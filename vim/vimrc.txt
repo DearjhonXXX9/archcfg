@@ -1,3 +1,9 @@
+" pip install flake8 autopep8 pylint pygame matplotlib torch
+" yay -S/pacman -S cppcheck instant-markdown-d
+
+
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -11,42 +17,47 @@ call vundle#begin()
     Plugin 'scrooloose/nerdtree'                " 目录树插件
     Plugin 'majutsushi/tagbar'                  " 显示类，变量之类的标签插件
     Plugin 'kien/ctrlp.vim'                     " 模糊搜索文件 ctrl p
-    Plugin 'tpope/vim-markdown'			" markdown
-    Plugin 'instant-markdown/vim-instant-markdown' " 
+    Plugin 'tpope/vim-markdown'			        " markdown
+    Plugin 'instant-markdown/vim-instant-markdown'
+
+
+
+
+
     "-------------------=== Other ===-------------------------------
     Plugin 'bling/vim-airline'                  " 底部状态增强/美化插件
     Plugin 'vim-airline/vim-airline-themes'     " 上面插件的主题
     Plugin 'Lokaltog/powerline'                 " 状态行插件
     Plugin 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
-    "Plugin 'rosenfeld/conque-term'              " Consoles as buffers
-    
+    "Plugin 'rosenfeld/conque-term'             " Consoles as buffers
+    Plugin 'tpope/vim-surround'                 " 轻松出里成对的符号，括号，方括号等
     Plugin 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
-    Plugin 'tpope/vim-fugitive'			"git 插件
-    Plugin 'fatih/vim-go'			"go
+    Plugin 'tpope/vim-fugitive'			        "git 插件
+    Plugin 'fatih/vim-go'			            "go
     "-------------------=== Snippets support ===--------------------
-    
+
     Plugin 'MarcWeber/vim-addon-mw-utils'       "dependencies #1 按函数解释文件并自动缓存文件
-    
+
     Plugin 'luochen1990/rainbow'		 "彩虹括号s
     Plugin 'jiangmiao/auto-pairs'		 "自动补全括号，引号等
-    Plugin 'Chiel92/vim-autoformat'		 "格式化代码   使用f3 
-    
+    Plugin 'Chiel92/vim-autoformat'		 "格式化代码   使用f3
+
     "-------------------=== Languages support ===-------------------
     Plugin 'tpope/vim-commentary'               " 注释插件   gc  .  为快捷键
-    Plugin 'mitsuhiko/vim-sparkup'              " 压缩 HTML 格式的解析器 
-     
-    Plugin 'Valloric/YouCompleteMe'             " ycm 
-    
+    Plugin 'mitsuhiko/vim-sparkup'              " 压缩 HTML 格式的解析器
+
+    Plugin 'Valloric/YouCompleteMe'             " ycm
+
 
     "-------------------=== Python  ===-----------------------------
-    Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式 
+    Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式
     Plugin 'scrooloose/syntastic'               " 错误检查
     Plugin 'c.vim'
     "Plugin 'terryma/vim-multiple-cursors'	" vim多光标
 
-    
-    
-    
+
+
+
 call vundle#end()                           " required
 filetype on
 filetype plugin on
@@ -150,7 +161,7 @@ function! SyncTree()
 endfunction
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
- 
+
 function! ToggleNerdTree()
   set eventignore=BufEnter
   NERDTreeToggle
@@ -312,7 +323,7 @@ let g:autoformat_verbosemode=1
 "let g:formatter_yapf_style = 'pep8'
 
 "export PATH="/home/jack/.local/bin:$PATH"
-"export PATH="$PATH:/home/jack/.local/bin"   
+"export PATH="$PATH:/home/jack/.local/bin"
 " ====================================================
 " rainbow 彩虹括号
 " =====================================================
@@ -341,11 +352,11 @@ let g:rainbow_conf = {
 \   }
 \}
 "================================================================================
-"   Markdown
+"   Markdown preview
 "  ==============================================================================
-"取消注释以覆盖默认值 
+"Uncomment to override defaults:
 "let g:instant_markdown_slow = 1
-"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_autostart = 1
 "let g:instant_markdown_open_to_the_world = 1
 "let g:instant_markdown_allow_unsafe_content = 1
 "let g:instant_markdown_allow_external_content = 0
