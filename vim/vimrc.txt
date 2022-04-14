@@ -1,7 +1,7 @@
 " pip install flake8 autopep8 pylint pygame matplotlib torch
 " yay -S/pacman -S cppcheck instant-markdown-d
-
-
+" yay -S stylelint shfmt clangformat astyle_c astyle_cpp js-beautify
+" yay -S htmlbeautify   tidy_html
 
 
 set nocompatible              " be iMproved, required
