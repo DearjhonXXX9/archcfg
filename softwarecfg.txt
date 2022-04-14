@@ -49,7 +49,9 @@ export XMODIFIERS="@im=fcitx"
 18.gwenview                         kde图片查看器
 19.spectacle                        kde截图工具
 20.discover                         kde软件管理器
-
+21.yakuake                          kde下拉式终端
+22.ktouch                           练习盲打
+23.dragon player                    可以恢复观看进度的播放器
 
 
 
