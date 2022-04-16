@@ -19,7 +19,6 @@ call vundle#begin()
     Plugin 'kien/ctrlp.vim'                     " 模糊搜索文件 ctrl p
     Plugin 'tpope/vim-markdown'			        " markdown
     Plugin 'instant-markdown/vim-instant-markdown'
-    Plugin 'voldikss/vim-translator'
 
 
 
@@ -366,5 +365,7 @@ let g:rainbow_conf = {
 "let g:instant_markdown_autoscroll = 0
 "let g:instant_markdown_port = 8888
 "let g:instant_markdown_python = 1
-nmap <silent> <Leader>tw <Plug>TranslateW
-vmap <silent> <Leader>tw <Plug>TranslateWV
+
+
+
+let g:ConqueTerm_StartMessages = 0
