@@ -28,11 +28,14 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline-themes'     " 上面插件的主题
     Plugin 'Lokaltog/powerline'                 " 状态行插件
     Plugin 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
-    Plugin 'rosenfeld/conque-term'              " Consoles as buffers
+
     Plugin 'tpope/vim-surround'                 " 轻松出里成对的符号，括号，方括号等
     Plugin 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
-    Plugin 'tpope/vim-fugitive'			        "git 插件
-    Plugin 'fatih/vim-go'			            "go
+    Plugin 'tpope/vim-fugitive'			        " git 插件
+    Plugin 'fatih/vim-go'			            " go
+    Plugin 'othree/html5.vim'
+    "Plugin 'terryma/vim-multiple-cursors'	    " vim多光标
+    Plugin 'AnotherProksY/ez-window'
     "-------------------=== Snippets support ===--------------------
 
     Plugin 'MarcWeber/vim-addon-mw-utils'       "dependencies #1 按函数解释文件并自动缓存文件
@@ -52,7 +55,7 @@ call vundle#begin()
     Plugin 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式
     Plugin 'scrooloose/syntastic'               " 错误检查
     Plugin 'c.vim'
-    "Plugin 'terryma/vim-multiple-cursors'	" vim多光标
+
 
 
 
@@ -68,7 +71,7 @@ filetype plugin indent on
 syntax enable                               " syntax highlight
 
 set t_Co=256                                " set 256 colors
-colorscheme badwolf                         " set color scheme
+colorscheme PaperColor                        " set color scheme
 
 set number                                  " show line numbers
 set ruler
@@ -120,7 +123,7 @@ set hlsearch	                            " highlight search results
 "=====================================================
 "" AirLine settings
 "=====================================================
-let g:airline_theme='ravenpower'
+let g:airline_theme='fairyfloss'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline_powerline_fonts=1
@@ -132,7 +135,7 @@ let g:tagbar_autofocus=0
 let g:tagbar_width=20
 
 
-" autocmd BufEnter *.py :call tagbar#autoopen(0)
+autocmd BufEnter *.py :call tagbar#autoopen(0)
 
 "=====================================================
 "" NERDTree settings
@@ -367,5 +370,5 @@ let g:rainbow_conf = {
 "let g:instant_markdown_python = 1
 
 
+let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '<' : '>'}
 
-let g:ConqueTerm_StartMessages = 0
