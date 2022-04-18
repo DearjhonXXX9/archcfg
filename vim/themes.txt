@@ -1,7 +1,12 @@
-angr 
-aqua
-astronaut
-bandit
+
+
+brighton
+
+PaperColor
+srcery
+brogrammer
+termschool  高亮可以显示当前行
+
 
 
 
@@ -10,8 +15,8 @@ bandit
 
 aireline-themes
 
-ubaryd 绿 好感，但与当前主题不符
+
 solarized_floo 赞
 fairyfloss 简约蓝
-hybrid    好
-ravenpower 简约
+hybrid    好   绿
+
