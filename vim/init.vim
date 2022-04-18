@@ -352,7 +352,7 @@ let g:ez_terminal_key = '<C-y>'   " or any key you want
 
 
 
-
+" 改tab键为补全 trigger
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
