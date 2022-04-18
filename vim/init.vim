@@ -40,11 +40,11 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'tpope/vim-surround'                 " 轻松出里成对的符号，括号，方括号等
     Plug 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
-    Plug 'tpope/vim-fugitive'			      " git 插件
-    "Plug 'ryanoasis/vim-devicons'            " 图标
+    Plug 'tpope/vim-fugitive'
+
 
     "Plug 'terryma/vim-multiple-cursors'	  " vim多光标
-    "Plug 'glepnir/dashboard-nvim'             " 开始面板 导航
+    "Plug 'glepnir/dashboard-nvim'             " 开始面板 导航   现在不知道怎么设置自启
 
     "-------------------=== Snippets support ===--------------------
 
@@ -63,12 +63,12 @@ call plug#begin('~/.config/nvim/plugged')
 
     "-------------------=== Python  ===-----------------------------
 
-    Plug 'scrooloose/syntastic'               "
+    Plug 'scrooloose/syntastic'               " 错误检查 语法检测
     Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式
 
 "-------------------------------------------------------------------------------------
 
-    Plug 'ryanoasis/vim-devicons'             "需要最后加载
+    Plug 'ryanoasis/vim-devicons'             "需要最后加载  目录树图标
 
 
 
@@ -352,7 +352,7 @@ let g:ez_terminal_key = '<C-y>'   " or any key you want
 
 
 
-" 改tab键为补全 trigger
+
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
@@ -364,3 +364,8 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" -------------------------------------------------------------------------
+
+
+
