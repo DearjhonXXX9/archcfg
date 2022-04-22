@@ -1,0 +1,59 @@
+安装zsh
+yay -S zsh
+更改默认终端
+chsh -s /bin/zsh
+
+或者编辑/etc/passwd文件，修改用户名后面的默认Shell即可。
+安装oh-my-zsh-git
+
+archlinuxcn源有打好的包，或者使用AUR安装。
+yay -S oh-my-zsh-git
+默认配置
+cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
+
+这时候打开终端软件，应该就会默认进入zsh了。
+精细化设置
+主题
+
+oh my zsh默认主题robbyrussell非常简单，只有一个箭头，对于大多数人这已经是一个非常不错的主题了，但既然还有超多主题可以选择，那当然也不能放过尝试的机会。
+
+编辑~/.zshrc文件，找到ZSH_THEME="robbyrussell"在这里改成自己想要的主题名字就行了，打开新的终端就能看到效果（这里还可以配置随机主题，每次打开终端都是使用不同的主题）。查看各种主题
+
+推荐一个比较精美的主题agnoster。
+ZSH_THEME="agnoster"
+插件
+
+oh my zsh默认启用了git插件，这样当进入一个git目录时会有不一样的效果。oh my zsh默认支持了超多的插件，可以根据自己喜好选择。查看各种插件
+
+推荐一个插件autojump，可以通过简单的命令进入想要目录，或者打开文件管理器，此插件需要依赖一个包需要提前安装。
+yay -S autojump
+插件配置
+
+同样是打开.zshrc文件，找到plugins=(git)，在这里增加自己想要的插件即可，多个插件名称之间使用空格或者换行分开（不能使用逗号）。
+plugins=(
+git
+autojump
+zsh-syntax-highlighting
+zsh-autosuggestions
+)
+zsh插件
+
+上面配置中有两个插件oh my zsh是不提供的，需要进行额外的安装和配置才能够使用。
+
+zsh-syntax-highlighting提供命令高亮现实，比如命令输入错误显示红色，命令输入正确显示绿色。
+zsh-autosuggestions提供命令建议，可以根据你执行的Shell命令记录，自动建议补全。
+官方方法
+
+可以使用官方介绍的安装方法（重点是oh-my-zsh部分）zsh-syntax-highlighting、zsh-autosuggestions
+我使用的方法
+
+官方介绍的方法是直接clone仓库到oh-my-zsh自定义的插件目录，让其能够使用此插件，但这种方式有个问题，就是插件要想更新的话，需要重新clone或者pull。而我发现arch仓库中是有这两个插件的，那我们使用仓库中的插件就可以跟着仓库一起更新了。
+yay -S zsh-syntax-highlighting zsh-autosuggestions
+
+这两个是zsh插件，使用上面的方式配置是不行的，因为oh-my-zsh找不到这两个插件（会报plugin not found）。为此我们要进行一下特殊处理，创建这两个插件的符号链接到oh-my-zsh的自定义插件目录。
+sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/custom/plugins/
+sudo ln -s /usr/share/zsh/plugins/zsh-autosuggestions /usr/share/oh-my-zsh/custom/plugins/
+
+打开一个新终端，接下来就可以使用功能强大的zsh了。
+
+

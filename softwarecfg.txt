@@ -52,7 +52,7 @@ export XMODIFIERS="@im=fcitx"
 21.yakuake                          kde下拉式终端
 22.ktouch                           练习盲打
 23.dragon player                    可以恢复观看进度的播放器
-
+24.ocrmypdf                         让pdf可以复制   不过不太准
 
 
 
