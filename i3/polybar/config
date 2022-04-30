@@ -53,7 +53,7 @@ module-margin-left = 2
 module-margin-right = 2
 
 modules-left = i3 xwindow
-modules-right = pulseaudio wlan memory cpu battery date
+modules-right = pulseaudio memory cpu battery date 
 
 dpi-x = 0
 dpi-y = 0
@@ -65,8 +65,16 @@ wm-restack = i3
 
 separator = |
 
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+;font-0 = "Dejavu:pixelsize=10;0"
+;font-1 = "Roboto:size=11:weight=bold;2"
+;font-2 = "Noto Sans CJK SC:size=11;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=13;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
 
-;override-redirect = true
+
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -151,24 +159,24 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = cpu  %percentage:2%%
+label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #ffffff
-label = memory %percentage_used%%
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlan021
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = netspeed %netspeed%
+label-connected = %netspeed%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -197,15 +205,16 @@ format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = date %date% %time%
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = volume %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
+label-muted =   muted
 label-muted-foreground = #666
 
 bar-volume-width = 1
@@ -217,9 +226,9 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill =
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
@@ -258,9 +267,9 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
-label-charging = charging %percentage%%
-label-discharging = battery %percentage%%
-label-full = full:) %percentage%%
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full =  %percentage%%
 format-charging = <ramp-capacity> <label-charging>
 format-charging-underline = #ffb52a
 
