@@ -69,8 +69,8 @@ bindsym $alt+Tab exec rofi -show window
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+i focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -334,7 +334,7 @@ bindsym $alt+y exec --no-startup-id youdao-dict
 # bindsym $mod+Shift+s  exec --no-startup-id  spectacle
 #autostart
 # picom(compton) compositor
-exec --no-startup-id picom -b --inactive-dim 0.3
+exec --no-startup-id picom -b --inactive-dim 0.0
 
 # polkit authentication agent
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

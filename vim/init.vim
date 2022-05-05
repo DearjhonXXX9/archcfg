@@ -6,7 +6,9 @@
 
 "pip3 install --user --upgrade pynvim
 
+set cmdheight=1
 
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
 set autochdir                 " 自动改变路径
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -38,7 +40,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'Lokaltog/powerline'                 " 状态行插件
     Plug 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
 
-    Plug 'tpope/vim-surround'                 " 轻松出里成对的符号，括号，方括号等
+    Plug 'tpope/vim-surround'                 " 轻松处理成对的符号，括号，方括号等
+    Plug 'tpope/vim-repeat'
     Plug 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
     Plug 'tpope/vim-fugitive'
 
@@ -54,9 +57,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'AnotherProksY/ez-window'   "窗口管理
 
 
+
     "-------------------=== Languages support ===-------------------
     Plug 'tpope/vim-commentary'               " 注释插件   gc   为快捷键
-
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     Plug 'vim-scripts/c.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -120,8 +124,10 @@ set secure                                  " prohibit .vimrc files to execute s
 tab sball
 set switchbuf=useopen
 set laststatus=2
-nmap <F9> :bprev<CR>
-nmap <F10> :bnext<CR>
+
+
+nnoremap <silent> [p :bprevious<CR>
+nnoremap <silent> ]p :bnext<CR>
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
 
@@ -143,7 +149,7 @@ let g:airline_powerline_fonts=1
 "" TagBar settings
 "=====================================================
 let g:tagbar_autofocus=0
-let g:tagbar_width=20
+let g:tagbar_width=27
 nmap <F12> :TagbarToggle<CR>
 
 "autocmd BufEnter *.py :call tagbar#autoopen(0)
@@ -153,8 +159,14 @@ nmap <F12> :TagbarToggle<CR>
 "=====================================================
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
 let NERDTreeWinSize=20
-autocmd VimEnter * if !argc() | NERDTree | endif  " Load NERDTree only if vim is run without arguments
 nmap " :NERDTreeToggle<CR>
+
+
+" Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | endif
+
+
 
 
 " 如果 NERDTree 是唯一选项卡中剩余的唯一窗口，则退出 Vim。
@@ -183,9 +195,8 @@ function! ToggleNerdTree()
   NERDTreeToggle
   set eventignore=
 endfunction
-nmap <C-\> :call ToggleNerdTree()<CR>
 
-autocmd vimenter * NERDTree ~/Documents/code/python
+autocmd vimenter * NERDTree ~/Documents/code
 
 "=====================================================
 "" Python settings
@@ -340,11 +351,10 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '<' : '>'}
 
 
 " Change default 'Window Resize' mode mapping:
-let g:resize_start_key = '<C-i>'  " or any key you want
+let g:resize_start_key = '<C-x>'  " or any key you want
 
 " Change 'Open Terminal' mapping:
 let g:ez_terminal_key = '<C-y>'   " or any key you want
-
 
 
 
@@ -365,7 +375,10 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-" -------------------------------------------------------------------------
+"================================================================================
+"   vim-devicons
+"  ==============================================================================
 
 
-
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 0

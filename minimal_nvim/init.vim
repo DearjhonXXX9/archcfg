@@ -46,6 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive'
 
 
+    "Plug 'terryma/vim-multiple-cursors'	  " vim多光标
     "Plug 'glepnir/dashboard-nvim'             " 开始面板 导航   现在不知道怎么设置自启
 
     "-------------------=== Snippets support ===--------------------
@@ -71,6 +72,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "-------------------------------------------------------------------------------------
 
+    Plug 'ryanoasis/vim-devicons'             "需要最后加载  目录树图标
 
 
 
@@ -122,8 +124,10 @@ set secure                                  " prohibit .vimrc files to execute s
 tab sball
 set switchbuf=useopen
 set laststatus=2
-nmap <F9> :bprev<CR>
-nmap <F10> :bnext<CR>
+
+
+nnoremap <silent> [p :bprevious<CR>
+nnoremap <silent> ]p :bnext<CR>
 nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 
 
