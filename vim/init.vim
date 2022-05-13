@@ -18,61 +18,57 @@ set ignorecase
 set wildmenu
 
 " 忽略插入模式的行间跳跃，为了实现文件间跳转
-inoremap <C-o> <nop>
-inoremap <C-i> <nop>
 
 set clipboard+=unnamedplus
 set encoding=UTF-8
 call plug#begin('~/.config/nvim/plugged')
 
-    "-------------------=== Code/Project navigation ===-------------
-    Plug 'scrooloose/nerdtree'                " 目录树插件
-    Plug 'majutsushi/tagbar'                  " 显示类，变量之类的标签插件
-    "Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }   " 模糊搜索插件
-    Plug 'kien/ctrlp.vim'                     " 模糊搜索文件 ctrl p
-    Plug 'tpope/vim-markdown'			        " markdown
-    Plug 'instant-markdown/vim-instant-markdown'
+"-------------------=== Code/Project navigation ===-------------
+Plug 'scrooloose/nerdtree'                " 目录树插件
+Plug 'majutsushi/tagbar'                  " 显示类，变量之类的标签插件
+"Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }   " 模糊搜索插件
+Plug 'kien/ctrlp.vim'                     " 模糊搜索文件 ctrl p
+Plug 'tpope/vim-markdown'                   " markdown
+Plug 'instant-markdown/vim-instant-markdown'
 
 
-    "-------------------=== Other ===-------------------------------
-    Plug 'bling/vim-airline'                  " 底部状态增强/美化插件
-    Plug 'vim-airline/vim-airline-themes'     " 上面插件的主题
-    Plug 'Lokaltog/powerline'                 " 状态行插件
-    Plug 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
+"-------------------=== Other ===-------------------------------
+Plug 'bling/vim-airline'                  " 底部状态增强/美化插件
+Plug 'vim-airline/vim-airline-themes'     " 上面插件的主题
+Plug 'Lokaltog/powerline'                 " 状态行插件
+Plug 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
 
-    Plug 'tpope/vim-surround'                 " 轻松处理成对的符号，括号，方括号等
-    Plug 'tpope/vim-repeat'
-    Plug 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
-    Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'                 " 轻松处理成对的符号，括号，方括号等
+Plug 'tpope/vim-repeat'
+Plug 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
+Plug 'tpope/vim-fugitive'
+Plug 'turbio/bracey.vim'                  " html实时预览
+Plug 'terryma/vim-multiple-cursors'       " vim多光标
+"Plug 'glepnir/dashboard-nvim'            " 开始面板 导航   现在不知道怎么设置自启
 
+"-------------------=== Snippets support ===--------------------
 
-    "Plug 'terryma/vim-multiple-cursors'	  " vim多光标
-    "Plug 'glepnir/dashboard-nvim'             " 开始面板 导航   现在不知道怎么设置自启
-
-    "-------------------=== Snippets support ===--------------------
-
-    Plug 'luochen1990/rainbow'	     "彩虹括号s
-    Plug 'jiangmiao/auto-pairs'		 "自动补全括号，引号 <>等
-    Plug 'Chiel92/vim-autoformat'	 "格式化代码
-    Plug 'AnotherProksY/ez-window'   "窗口管理
-
+Plug 'luochen1990/rainbow'       "彩虹括号s
+Plug 'jiangmiao/auto-pairs'      "自动补全括号，引号 <>等
+Plug 'Chiel92/vim-autoformat'    "格式化代码
+Plug 'AnotherProksY/ez-window'   "窗口管理
 
 
-    "-------------------=== Languages support ===-------------------
-    Plug 'tpope/vim-commentary'               " 注释插件   gc   为快捷键
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-    Plug 'vim-scripts/c.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"-------------------=== Languages support ===-------------------
+Plug 'tpope/vim-commentary'               " 注释插件   gc   为快捷键
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-    "-------------------=== Python  ===-----------------------------
+Plug 'vim-scripts/c.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-    Plug 'scrooloose/syntastic'               " 错误检查 语法检测
-    Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式
+"-------------------=== Python  ===-----------------------------
+
+Plug 'scrooloose/syntastic'               " 错误检查 语法检测
+Plug 'klen/python-mode'                   " Python mode (docs, refactor, lints...)   python模式
 
 "-------------------------------------------------------------------------------------
-
-    Plug 'ryanoasis/vim-devicons'             "需要最后加载  目录树图标
+Plug 'ryanoasis/vim-devicons'             "需要最后加载  目录树图标
 
 
 
@@ -99,11 +95,11 @@ set autoindent                              " indent when moving to the next lin
 set cursorline                              " shows line under the cursor's line
 set showmatch                               " shows matching part of bracket pairs (), [], {}
 
-set enc=utf-8	                            " utf-8 by default
+set enc=utf-8                               " utf-8 by default
 
-set nobackup 	                            " no backup files
+set nobackup                                " no backup files
 set nowritebackup                           " only in case you don't want a backup file while editing
-set noswapfile 	                            " no swap files
+set noswapfile                              " no swap files
 
 set backspace=indent,eol,start              " backspace removes all (indents, EOLs, start) What is start?
 
@@ -134,8 +130,8 @@ nmap <silent> <leader>q :SyntasticCheck # <CR> :bp <BAR> bd #<CR>
 " ======================================================
 "" Search settings
 "=====================================================
-set incsearch	                            " incremental search
-set hlsearch	                            " highlight search results
+set incsearch                               " incremental search
+set hlsearch                                " highlight search results
 
 "=====================================================
 "" AirLine settings
@@ -177,23 +173,23 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " nerdtree跟随打开的文件自动跳转目录
 " Check if NERDTree is open or active
 function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 " Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff
 function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+        NERDTreeFind
+        wincmd p
+    endif
 endfunction
 " Highlight currently open buffer in NERDTree
 autocmd BufEnter * call SyncTree()
 
 function! ToggleNerdTree()
-  set eventignore=BufEnter
-  NERDTreeToggle
-  set eventignore=
+    set eventignore=BufEnter
+    NERDTreeToggle
+    set eventignore=
 endfunction
 
 autocmd vimenter * NERDTree ~/Documents/code
@@ -301,27 +297,27 @@ let g:autoformat_verbosemode=1
 "rainbow
 let g:rainbow_active = 1
 let g:rainbow_conf = {
-\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\       '*': {},
-\       'tex': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\       },
-\       'lisp': {
-\           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-\       },
-\       'vim': {
-\           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\       },
-\       'html': {
-\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-\       },
-\       'css': 0,
-\   }
-\}
+            \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+            \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \   'operators': '_,_',
+            \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \   'separately': {
+                \       '*': {},
+                \       'tex': {
+                    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+                    \       },
+                    \       'lisp': {
+                        \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+                        \       },
+                        \       'vim': {
+                            \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+                            \       },
+                            \       'html': {
+                                \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+                                \       },
+                                \       'css': 0,
+                                \   }
+                                \}
 "================================================================================
 "   Markdown preview
 "  ==============================================================================
@@ -366,14 +362,14 @@ let g:ez_terminal_key = '<C-y>'   " or any key you want
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<Tab>" :
+            \ coc#refresh()
 
 "================================================================================
 "   vim-devicons

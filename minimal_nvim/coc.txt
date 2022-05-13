@@ -1,1 +1,0 @@
-coc-clangd coc-docker coc-go coc-html coc-pyright coc-htmlinht coc-json coc-snippets coc-sql coc-tsserver coc-vimlsp coc-stylelint
