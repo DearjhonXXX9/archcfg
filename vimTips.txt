@@ -1,7 +1,6 @@
-ctrl o  		向后跳转  
-ctel i 			向前跳转
+
 f5   			运行py文件
-右shift  "          	开关目录树   配置里设置了目录树跟随文件跳转
+ctrl + f          	开关目录树   配置里设置了目录树跟随文件跳转
 gc        		注释整行                      
 f3             		格式化代码                               
 gf             		跳转到文件中  比如1.txt
@@ -14,10 +13,11 @@ shift tab		被改为tab键
 :bd			删除buffer
 zf			进行折叠代码
 zo			恢复折叠
-f9 在文件间跳转
+
 ctrl 6			在两个文件中跳转
 
-
+[p          向左跳转
+]p          向右跳转
 
 
 v			进入可视模式
@@ -25,8 +25,6 @@ gv			重选上次的高亮区块
 
 
 
-
-\tw         translator
 
 :e          重新载入buffer  
 :e 【PATH】 新的buffer打开文件
