@@ -39,11 +39,11 @@ Plug 'Lokaltog/powerline'                 " 状态行插件
 Plug 'fisadev/FixedTaskList.vim'          " 任务列表插件 处理标签
 
 Plug 'tpope/vim-surround'                 " 轻松处理成对的符号，括号，方括号等
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'                   " 配合上一个插件使用，可以.重复上一个步骤
 Plug 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
 Plug 'tpope/vim-fugitive'
-Plug 'turbio/bracey.vim'                  " html实时预览
-Plug 'terryma/vim-multiple-cursors'       " vim多光标
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+" Plug 'terryma/vim-multiple-cursors'       " vim多光标
 "Plug 'glepnir/dashboard-nvim'            " 开始面板 导航   现在不知道怎么设置自启
 
 "-------------------=== Snippets support ===--------------------
@@ -155,8 +155,7 @@ nmap <F12> :TagbarToggle<CR>
 "=====================================================
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '__pycache__$']     " Ignore files in NERDTree
 let NERDTreeWinSize=20
-nmap " :NERDTreeToggle<CR>
-
+nnoremap <C-f> :NERDTreeToggle<CR>
 
 " Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
 autocmd StdinReadPre * let s:std_in=1
@@ -244,7 +243,6 @@ let g:pymode_syntax_builtin_objs=g:pymode_syntax_all
 let g:pymode_syntax_builtin_types=g:pymode_syntax_all
 let g:pymode_syntax_highlight_exceptions=g:pymode_syntax_all
 let g:pymode_syntax_docstrings=g:pymode_syntax_all
-
 " highlight 'long' lines (>= 80 symbols) in python files
 augroup vimrc_autocmds
     autocmd!
@@ -275,10 +273,6 @@ let g:syntastic_error_symbol='X'
 let g:syntastic_style_error_symbol='X'
 let g:syntastic_warning_symbol='x'
 let g:syntastic_style_warning_symbol='x'
-"let g:syntastic_python_checkers=['flake8', 'pydocstyle']
-"let g:syntastic_cpp_cpplint_exec = "cppcheck"
-"let g:syntastic_cpp_checkers = ['cppcheck']
-
 
 
 " ===================================================
@@ -342,6 +336,8 @@ let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '<' : '>'}
 
 
 "-------------------------------------------------------------------------
+" ez-window 插件
+"-------------------------------------------------------------------------
 
 
 
@@ -351,13 +347,6 @@ let g:resize_start_key = '<C-x>'  " or any key you want
 
 " Change 'Open Terminal' mapping:
 let g:ez_terminal_key = '<C-y>'   " or any key you want
-
-
-
-
-
-
-
 
 
 " use <tab> for trigger completion and navigate to the next complete item
@@ -378,3 +367,6 @@ inoremap <silent><expr> <Tab>
 
 " adding the flags to NERDTree
 let g:webdevicons_enable_nerdtree = 0
+
+
+nnoremap <silent> <F10> :Bracey<CR>

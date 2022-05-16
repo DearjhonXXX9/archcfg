@@ -226,7 +226,7 @@ for_window [class=".*"] border pixel 0
 smart_gaps on
 smart_borders on
 gaps inner 30
-
+border_radius 10
 # Gaps mode
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -306,7 +306,6 @@ bindsym $alt+e exec --no-startup-id dolphin
 bindsym $alt+f exec --no-startup-id $terminal -e ranger
 
 
-exec --no-startup-id nm-applet
 
 # enable nsfw mode
 bindsym ctrl+$mod+n exec --no-startup-id "~/.nsfw.sh &"
@@ -334,7 +333,7 @@ bindsym $alt+y exec --no-startup-id youdao-dict
 # bindsym $mod+Shift+s  exec --no-startup-id  spectacle
 #autostart
 # picom(compton) compositor
-exec --no-startup-id picom -b --inactive-dim 0.0
+exec --no-startup-id picom -b --inactive-dim 0.4
 
 # polkit authentication agent
 #exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -346,7 +345,7 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id "~/.start.sh &"
 
 # start fcitx5
-exec --no-startup-id "fcitx5 &"
+exec --no-startup-id "fcitx &"
 
 # for notifications support, notification-daemon
 exec --no-startup-id "twmnd &"
@@ -367,6 +366,7 @@ assign [class="TIM.exe"] $ws3
 assign [class="yesplaymusic"] $ws4
 assign [class="VirtualBox Manager"] $ws5
 assign [class="netease-cloud-music"] $ws4
+assign [class="QQ.exe"] $ws3
 # polybar
 # exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 for_window [instance="TIM.exe"] floating enable
@@ -387,5 +387,5 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
-exec --no-startup-id "xrandr --output eDP --mode 1920x1080 --rate 60.01"
+exec --no-startup-id "xrandr --output eDP --mode 1920x1080 --rate 144.02"
 exec --no-startup-id   autotiling
