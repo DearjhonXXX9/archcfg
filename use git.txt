@@ -19,7 +19,7 @@ gedit id_rsa.pub
 git add .
 git commit -m "提交说明"
 
-git remote add origin 你的远程库地址
+git remote add origin https://github.com/DearjhonXXX9/archcfg.git
 =================================================
 举个例子:
 
@@ -41,4 +41,4 @@ git push -u origin main
 避免每次都要push输密码
 git remote rm origin
 git remote add origin git@github.com:DearjhonXXX9/archcfg.git
-git push -u origin master
+git push -u origin main
