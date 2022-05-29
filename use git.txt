@@ -40,5 +40,5 @@ git push -u origin main
 =================================================
 避免每次都要push输密码
 git remote rm origin
-git remote add origin git@github.com:whbing147/learngit.git
+git remote add origin git@github.com:DearjhonXXX9/archcfg.git
 git push -u origin master
