@@ -6,6 +6,7 @@ fc-cache -vf
 
 触摸板设置 实现单击和natural scrolling
 pacman -S libinput xf86-input-libinput
+sudo vim /usr/share/X11/xorg.conf.d/40-libinput.conf
 ==============================
 Section "InputClass"
         Identifier "touchpad"
