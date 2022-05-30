@@ -3,11 +3,10 @@
 
 " CocInstall coc-pyright coc-html coc-sh coc-json coc-tsserver coc-snippets coc-clangd coc-go coc-css coc-emmet coc-htmlhint
 
-
+"pip3 install --user --upgrade pynvim
 
 set cmdheight=1
 
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
 set autochdir                 " 自动改变路径
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -190,7 +189,7 @@ function! ToggleNerdTree()
     set eventignore=
 endfunction
 
-autocmd vimenter * NERDTree ~/Documents/code
+autocmd vimenter * NERDTree ~/Documents/archcfg/coding
 
 "=====================================================
 "" Python settings
