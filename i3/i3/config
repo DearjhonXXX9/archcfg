@@ -376,7 +376,7 @@ for_window [instance="TIM.exe"] border none
 
 
 bar {
-    font pango:hack,Font Awesome 5  13
+    font pango:hack,Font Awesome 5  12
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {

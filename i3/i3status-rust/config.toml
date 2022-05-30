@@ -9,7 +9,7 @@ theme = 'space-villain'
 # theme = 'semi-native'
 # theme = 'nord-dark'
 # theme = 'dracula'
-icons = "material"
+icons = "none"
 
 
 
