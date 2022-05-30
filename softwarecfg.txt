@@ -29,7 +29,7 @@ sudo pacman -R $(pacman -Qdtq)          无用的包
 sudo pacman -Scc                        已下载的包
 
 
-1.vim配置
+1.nvim配置
 2.wineqq
 3.v2raya
 4.xunlei
@@ -88,41 +88,7 @@ sudo pacman -S archlinuxcn-keyring
 
 
 
+i3 配置
 
 
-2.blackarch  基于arch安装，添加源
-
-# Run https://blackarch.org/strap.sh as root and follow the instructions.
-$ curl -O https://blackarch.org/strap.sh
-
-# Verify the SHA1 sum
-$ echo 8bfe5a569ba7d3b055077a4e5ceada94119cccef strap.sh | sha1sum -c
-
-# Set execute bit
-$ chmod +x strap.sh
-
-# Run strap.sh
-$ sudo ./strap.sh
-
-# Enable multilib following https://wiki.archlinux.org/index.php/Official_repositories#Enabling_multilib and run:
-$ sudo pacman -Syu
-
-
-
-
-
-
-
-==============================================
-vim插件
-==============================================
-1.vim-youcompleteme-git
-
-（将 ~/.local/bin  添加到系统变量）
-/etc/profile
-~/.zshrc   || ~/.bashrc
-
-export PATH=/home/jack/.local/bin:$PATH
-
-2.instant-markdown-d                markdown-instant-preview
-3.
+rofi termite feh picom ranger ueberzug twmn-git xidlehook betterlockscreen networkmanager-applet

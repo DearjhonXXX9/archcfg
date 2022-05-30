@@ -1,11 +1,16 @@
-theme = "native"
+# theme = "native"
+# theme = 'plain'
+# theme = 'solarized-dark'
+# theme = 'slick'
+# theme = 'modern'
+# theme = 'bad-wolf'
+# theme = 'gruvbox-dark'
+theme = 'space-villain'
+# theme = 'semi-native'
+# theme = 'nord-dark'
+# theme = 'dracula'
 icons = "material"
 
-
-[[block]]
-block = "focused_window"
-max_width = 50
-show_marks = "visible"
 
 
 [[block]]
@@ -17,11 +22,6 @@ block = "memory"
 display_type = "memory"
 format_mem = "{mem_used_percents}"
 format_swap = "{swap_used_percents}"
-
-[[block]]
-block = "cpu"
-interval = 5
-
 
 
 [[block]]
