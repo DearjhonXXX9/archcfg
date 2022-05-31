@@ -226,7 +226,6 @@ for_window [class=".*"] border pixel 0
 smart_gaps on
 smart_borders on
 gaps inner 30
-border_radius 10
 # Gaps mode
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -326,10 +325,10 @@ bindsym $alt+n exec --no-startup-id netease-cloud-music
 # firefox
 bindsym $alt+b exec --no-startup-id firefox
 
-# youdao-dict
 bindsym $alt+y exec --no-startup-id youdao-dict
 bindsym $alt+t exec --no-startup-id telegram-desktop
 bindsym $alt+o exec --no-startup-id obs
+bindsym $alt+v exec --no-startup-id VirtualBox
 
 # spectacle
 # bindsym $mod+Shift+s  exec --no-startup-id  spectacle
@@ -361,7 +360,7 @@ exec --no-startup-id "twmnd &"
 #exec --no-startup-id "$HOME/.i3lock-gen-image.sh ~/.wallpaper/ &"
 
 #auto lock screen
-exec --no-startup-id "xidlehook --not-when-audio --not-when-fullscreen --timer 120 '~/.lockscreen.sh' '' &"
+exec --no-startup-id "xidlehook --not-when-audio --not-when-fullscreen --timer 180 '~/.lockscreen.sh' '' &"
 
 assign [class="telegram-desktop"] $ws3
 assign [class="TIM.exe"] $ws3
@@ -391,7 +390,7 @@ bar {
 }
 # exec --no-startup-id "xrandr --output eDP --mode 1920x1080 --rate 144.02"
 # exec --no-startup-id "xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97 "
-exec --no-startup-id xrandr --output HDMI-A-0 --pos 0x0 --mode 1920x1080 --rate 74.97 --primary --output eDP --off
+exec --no-startup-id xrandr --output HDMI-A-0 --pos 0x0 --primary --mode 1920x1080 --rate 74.97 --output eDP --off
 exec --no-startup-id   autotiling
 
 exec --no-startup-id   nm-applet
