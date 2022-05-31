@@ -11,7 +11,10 @@ theme = 'space-villain'
 # theme = 'dracula'
 icons = "none"
 
-
+[[block]]
+block = "focused_window" 
+max_width = 50 
+show_marks = "visible"
 
 [[block]]
 block = "sound"
