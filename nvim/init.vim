@@ -1,9 +1,10 @@
+" yay -S python-pip
 " pip install flake8 autopep8  pygame matplotlib torch pynvim
-" yay -S  cppcheck instant-markdown-d stylelint shfmt clangformat astyle_c astyle_cpp js-beautify  htmlbeautify   tidy_html
+" yay -S  cppcheck instant-markdown-d stylelint shfmt clangformat astyle_c astyle_cpp
 
 " CocInstall coc-pyright coc-html coc-sh coc-json coc-tsserver coc-snippets coc-clangd coc-go coc-css coc-emmet coc-htmlhint
 
-"pip3 install --user --upgrade pynvim
+
 
 set cmdheight=1
 
