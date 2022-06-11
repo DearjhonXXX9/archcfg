@@ -37,6 +37,8 @@ sudo pacman -Scc                        已下载的包
 kdeconnect gwenview  spectacle ktouch  dragon player okular zotero xfce4-power-manager   nautilus kate
 
 
+tldr++   命令提示
+element   matrix client
 
 
 
