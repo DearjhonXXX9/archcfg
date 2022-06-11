@@ -1,4 +1,4 @@
-" yay -S python-pip npm yarn
+" yay -S python-pip
 " pip install flake8 autopep8  pygame matplotlib torch pynvim
 " yay -S  cppcheck instant-markdown-d stylelint shfmt clangformat astyle_c astyle_cpp
 
