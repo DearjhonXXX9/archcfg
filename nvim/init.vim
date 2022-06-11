@@ -1,4 +1,4 @@
-" yay -S python-pip
+" yay -S python-pip npm yarn
 " pip install flake8 autopep8  pygame matplotlib torch pynvim
 " yay -S  cppcheck instant-markdown-d stylelint shfmt clangformat astyle_c astyle_cpp
 
@@ -190,7 +190,7 @@ function! ToggleNerdTree()
     set eventignore=
 endfunction
 
-autocmd vimenter * NERDTree ~/Documents/archcfg/coding
+autocmd vimenter * NERDTree ~/Documents/coding
 
 "=====================================================
 "" Python settings
