@@ -31,43 +31,11 @@ sudo pacman -Scc                        已下载的包
 
 
 1.nvim配置
-2.wineqq
-3.v2raya
-4.xunlei
-3.pycharm-profession
-4.baidudisk
-5.aliyunpan
-6.fcitx-sougoupinyin
+2.wineqq v2raya xunlei pycharm  baidudisk-electron aliyunpan  fcitx-sogoupinyin  fcitx-configtool  wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
 
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
+9.netease cloud music  youdaodict   obs-studio-tytan652   etcher  wemeet
+kdeconnect gwenview  spectacle ktouch  dragon player okular zotero xfce4-power-manager   nautilus kate
 
-export GTK_IM_MODULE=fcitx
-
-export QT_IM_MODULE=fcitx
-
-export XMODIFIERS="@im=fcitx"
-
-7.zotero                            文献管理
-
-8.wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
-
-9.netease cloud music
-10.youdaodict
-11.minecraft
-12.obs-studio-tytan652
-13.etcher
-14.wemeet
-15.okular                           kde的文档查看器
-16.kate                             kde编辑器 功能强大
-17.kdeconnect
-18.gwenview                         kde图片查看器
-19.spectacle                        kde截图工具
-20.discover                         kde软件管理器
-21.yakuake                          kde下拉式终端
-22.ktouch                           练习盲打
-23.dragon player                    可以恢复观看进度的播放器
 
 
 
@@ -92,4 +60,14 @@ sudo pacman -S archlinuxcn-keyring
 i3 配置
 
 
-rofi termite feh picom ranger ueberzug twmn-git xidlehook betterlockscreen networkmanager-applet
+rofi termite feh picom ranger ueberzug twmn-git xidlehook betterlockscreen
+
+
+v2ray
+systemctl enable --now v2raya.service
+systemctl restart v2raya.service
+
+
+
+sudo pacman -S linux-zen linux-zen-headers linux-lts linux-lts-headers
+sudo grub-mkconfig -o /boot/grub/grub.cfg
