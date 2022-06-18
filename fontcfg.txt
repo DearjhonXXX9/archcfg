@@ -1,7 +1,7 @@
 sudo pacman -S
-ttf.hannom noto-fonts noto-fonts-extra noto-fonts-emoji tf-hack
+ noto-fonts noto-fonts-extra noto-fonts-emoji ttf-hack
 noto-fonts-cjk adobe-source-code-pro-fonts adobe-source-sans-fonts  adobe-source-serif-fonts adobe-sourcehan-sans-cn-fonts 
-adobe-source-han-hk-fonts adobe-source-han-sans-tw-fonts  adobe-source-han-serif-cn-fonts  wqy-zenhei
+ adobe-source-han-sans-tw-fonts  adobe-source-han-serif-cn-fonts  wqy-zenhei
 
-ttf-material-design-icons    ttf-font-awesome-5 ttf-ms-win10-auto   nerd-fonts-complete nerd-fonts-hack
+ttf-material-design-icons    ttf-font-awesome-5 ttf-ms-win10-auto   nerd-fonts-complete
 

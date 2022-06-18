@@ -5,7 +5,7 @@ fc-cache -vf
 更新字体缓存
 
 触摸板设置 实现单击和natural scrolling
-pacman -S libinput xf86-input-libinput
+sudo pacman -S libinput xf86-input-libinput
 sudo vim /usr/share/X11/xorg.conf.d/40-libinput.conf
 ==============================
 Section "InputClass"
@@ -18,6 +18,8 @@ Section "InputClass"
         Option "TappingButtonMap" "lmr"
         Option "DisableWhileTyping" "on"
         Option "TappingDrag" "on"
+        Option "VertScrollDelta" "-111"
+        Option HorizScrollDelta" "-111"
 EndSection
 ==============================
 安装上面的来
@@ -31,14 +33,15 @@ sudo pacman -Scc                        已下载的包
 
 
 1.nvim配置
-2.wineqq v2raya xunlei pycharm  baidudisk-electron aliyunpan  fcitx-sogoupinyin  fcitx-configtool  wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
+2.wineqq v2raya xunlei-bin  pycharm-professional visual-studio-code-bin   baidunetdisk-electron baidu-translate-client-bin   aliyunpan-liupan1890   fcitx-sogoupinyin  fcitx-configtool  wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
 
-9.netease cloud music  youdaodict   obs-studio-tytan652   etcher  wemeet
-kdeconnect gwenview  spectacle ktouch  dragon player okular zotero xfce4-power-manager   nautilus kate
+9.netease cloud music     obs-studio-tytan652   etcher-bin   wemeet-bin
+kdeconnect gwenview  spectacle ktouch  dragon okular zotero xfce4-power-manager  kate
+libreoffice-extension-languagetool   libreoffice-dev-bin
 
 
 tldr++   命令提示
-element   matrix client
+
 
 
 

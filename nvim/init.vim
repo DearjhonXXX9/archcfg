@@ -1,6 +1,5 @@
-" yay -S python-pip
 " pip install flake8 autopep8  pygame matplotlib torch pynvim
-" yay -S  cppcheck instant-markdown-d stylelint shfmt clangformat astyle_c astyle_cpp
+" yay -S  cppcheck instant-markdown-d stylelint shfmt  python-pip
 
 " CocInstall coc-pyright coc-html coc-sh coc-json coc-tsserver coc-snippets coc-clangd coc-go coc-css coc-emmet coc-htmlhint
 

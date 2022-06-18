@@ -268,24 +268,24 @@ mode "$mode_gaps_outer" {
 
 # support for kde plasma
 
-# for_window [title="Desktop — Plasma"] kill, floating enable, border none
-# for_window [class="plasmashell"] floating enable
-# for_window [class="Plasma"] floating enable, border none
-# for_window [title="plasma-desktop"] floating enable, border none
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+for_window [class="plasmashell"] floating enable
+for_window [class="Plasma"] floating enable, border none
+for_window [title="plasma-desktop"] floating enable, border none
 # for_window [title="win7"] floating enable, border none
-# for_window [class="Kmix"] floating enable, border none
-# for_window [class="Klipper"] floating enable, border none
-# for_window [class="Plasmoidviewer"] floating enable, border none
-# for_window [class="(?i)*nextcloud*"] floating disable
-# for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
-# no_focus [class="plasmashell" window_type="notification"]
+for_window [class="Kmix"] floating enable, border none
+for_window [class="Klipper"] floating enable, border none
+for_window [class="Plasmoidviewer"] floating enable, border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"]
 
 ## for kde notification positoin
 #for_window [class="plasmashell" window_type="notification"] floating enable, border none, move position 1550px 80px
 
 ## for kde auto start powermanager
-# exec --no-startup-id "/usr/lib/org_kde_powerdevil &"
-exec --no-startup-id "xfce4-power-manager &"
+exec --no-startup-id "/usr/lib/org_kde_powerdevil &"
+# exec --no-startup-id "xfce4-power-manager &"
 
 
 # for kde backlight
@@ -362,13 +362,6 @@ exec --no-startup-id "twmnd &"
 #auto lock screen
 exec --no-startup-id "xidlehook --not-when-audio --not-when-fullscreen --timer 180 '~/.lockscreen.sh' '' &"
 
-assign [class="telegram-desktop"] $ws3
-assign [class="TIM.exe"] $ws3
-assign [class="yesplaymusic"] $ws4
-assign [class="VirtualBox Manager"] $ws5
-assign [class="netease-cloud-music"] $ws4
-assign [class="QQ.exe"] $ws3
-# polybar
 # exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 for_window [instance="TIM.exe"] floating enable
 for_window [instance="TIM.exe"] border none
