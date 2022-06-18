@@ -300,7 +300,7 @@ bindsym $mod+x [urgent=latest] focus
 # key binding
 
 # file manager
-bindsym $alt+e exec --no-startup-id nautilus
+bindsym $alt+e exec --no-startup-id dolphin
 # ranger file manager
 bindsym $alt+f exec --no-startup-id $terminal -e ranger
 
@@ -365,7 +365,11 @@ exec --no-startup-id "xidlehook --not-when-audio --not-when-fullscreen --timer 1
 # exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 for_window [instance="TIM.exe"] floating enable
 for_window [instance="TIM.exe"] border none
-
+assign [class="TelegramDesktop"] $ws3
+assign [class="VirtualBox Manager"] $ws5
+assign [class="netease-cloud-music"] $ws4
+#for_window [class="VirtualBox Machine"] floating enable; border none;
+#for_window [class="VirtualBoxVM"] floating enable; border none;
 
 bar {
     font pango:hack,Font Awesome 5  12
