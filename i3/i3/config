@@ -372,7 +372,7 @@ assign [class="netease-cloud-music"] $ws4
 #for_window [class="VirtualBoxVM"] floating enable; border none;
 
 bar {
-    font pango:hack,Font Awesome 5  12
+    font pango:JetBrains Mono Nerd Font,Font Awesome 5  11
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {

@@ -162,6 +162,7 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == ''
 
 
 
+
 " 如果 NERDTree 是唯一选项卡中剩余的唯一窗口，则退出 Vim。
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 

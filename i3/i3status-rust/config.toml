@@ -5,8 +5,8 @@
 # theme = 'modern'
 # theme = 'bad-wolf'
 # theme = 'gruvbox-dark'
-theme = 'space-villain'
-# theme = 'semi-native'
+# theme = 'space-villain'
+theme = 'semi-native'
 # theme = 'nord-dark'
 # theme = 'dracula'
 icons = "none"
