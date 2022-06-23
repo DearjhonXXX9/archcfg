@@ -4,39 +4,7 @@ git config --global user.name ""
 git config --global user.email ""
 
 ssh-keygen -C '你的电子邮件地址@gmail.com' -t rsa 
-设置下密码
 
-cd ~/.ssh
-gedit id_rsa.pub
-复制ssh密匙 到github上setting中添加
-
---------------------------------------------------------
---------------------------------------------------------
-# 上传远程库
-
-把自己的远程库clone下来
-把文件放进这个文件夹
-git add .
-git commit -m "提交说明"
-
-git remote add origin https://github.com/DearjhonXXX9/archcfg.git
-=================================================
-举个例子:
-
-    git remote add origin https://github.com/humengxiangfeng/Vue.git
-=================================================
-
-=================================================
-获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）
-git pull --rebase origin master
-=================================================
-
-
-把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。
-
-git push -u origin main
-
-这里的密码用token密码  在settings里的developers settings   personal access tokens  要把这个密码记下来  因为刷新网页就会消失
 =================================================
 避免每次都要push输密码
 git remote rm origin
