@@ -33,13 +33,12 @@ sudo pacman -Scc                        已下载的包
 
 
 1.nvim配置
-2.wineqq v2raya xunlei-bin  pycharm-professional visual-studio-code-bin   baidunetdisk-electron baidu-translate-client-bin   aliyunpan-liupan1890   fcitx-sogoupinyin  fcitx-configtool  wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
+2.wineqq v2raya xunlei-bin  pycharm-professional visual-studio-code-bin    baidu-translate-client-bin      fcitx-sogoupinyin   fcitx-configtool  wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
+baidunetdisk-electron  aliyunpan-liupan1890
+9.netease-cloud-music        etcher-bin   wemeet-bin
+kdeconnect gwenview  spectacle ktouch  dragon okular zotero  kate  libreoffice-extension-languagetool   libreoffice-dev-bin
 
-9.netease cloud music     obs-studio-tytan652   etcher-bin   wemeet-bin
-kdeconnect gwenview  spectacle ktouch  dragon okular zotero xfce4-power-manager  kate
-libreoffice-extension-languagetool   libreoffice-dev-bin
-
-
+obs-studio-tytan652
 tldr++   命令提示
 
 
@@ -54,11 +53,11 @@ tldr++   命令提示
 
 [archlinuxcn]
 SigLevel = Optional TrustAll
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 
 之后
 
-sudo pacman -S archlinuxcn-keyring
+sudo pacman -Sy archlinuxcn-keyring
 
 
 
