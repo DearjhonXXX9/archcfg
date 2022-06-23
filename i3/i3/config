@@ -346,7 +346,7 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id "~/.start.sh &"
 
 # start fcitx5
-exec --no-startup-id "fcitx &"
+exec --no-startup-id "fcitx5 &"
 
 # for notifications support, notification-daemon
 exec --no-startup-id "twmnd &"
