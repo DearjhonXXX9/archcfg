@@ -1,8 +1,10 @@
-" pip install  autopep8  pygame matplotlib  pynvim npm yarn
+" pip install flake8 autopep8  pygame matplotlib torch pynvim
 " yay -S  cppcheck instant-markdown-d stylelint shfmt  python-pip
 
 " CocInstall coc-pyright coc-html coc-sh coc-json coc-tsserver coc-snippets coc-clangd coc-go coc-css coc-emmet coc-htmlhint coc-git
 " sudo npm -g install instant-markdown-d
+" bracey 使用 在plugged目录  npm install --prefix server
+
 
 
 set cmdheight=1
