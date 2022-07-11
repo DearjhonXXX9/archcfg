@@ -1,5 +1,8 @@
 env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" /usr/bin/deepin-wine5 winecfg          调整wineqq  dpi
 
+sudo modprobe -r pcspkr
+关闭垃圾联想拯救者的 主板蜂鸣器
+
 
 
 ==============================  输入法fcitx5
