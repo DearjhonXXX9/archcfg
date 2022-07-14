@@ -104,8 +104,7 @@ vi-mode
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias work='cd ~/Documents/code'
-alias workp='cd ~/Documents/code/python'
+
 alias dow='cd ~/Downloads'
 alias doc='cd ~/Documents'
 alias reb='reboot'
@@ -147,4 +146,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-conda deactivate
+
