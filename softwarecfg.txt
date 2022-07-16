@@ -108,5 +108,5 @@ systemctl restart v2raya.service
 
 
 
-sudo pacman -S linux-zen linux-zen-headers linux-lts linux-lts-headers
+sudo pacman -S linux-zen linux-zen-headers 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
