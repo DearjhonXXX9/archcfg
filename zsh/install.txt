@@ -1,6 +1,7 @@
 yay -S zsh oh-my-zsh-git
 chsh -s /bin/zsh
 
+cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
 
 
 yay -S zsh-syntax-highlighting zsh-autosuggestions

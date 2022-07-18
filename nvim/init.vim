@@ -57,7 +57,7 @@ Plug 'mattn/emmet-vim'
 
 "-------------------=== Languages support ===-------------------
 Plug 'tpope/vim-commentary'               " 注释插件   gc   为快捷键
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 Plug 'vim-scripts/c.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

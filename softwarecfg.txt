@@ -1,16 +1,59 @@
 env WINEPREFIX="$HOME/.deepinwine/Deepin-QQ" /usr/bin/deepin-wine5 winecfg          调整wineqq  dpi
-
+======================================================================
 sudo modprobe -r pcspkr
 sudo rmmod pcspkr
 关闭垃圾联想拯救者的 主板蜂鸣器
 
+=========================================================
+1.创建一个启动service脚本
 
+su
+
+vim /usr/lib/systemd/system/rc-local.service
+
+内容
+----------------------------------------------------
+[Unit]
+Description="/etc/rc.local Compatibility"
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardInput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+
+[Install]
+WantedBy=multi-user.target
+----------------------------------------------------
+2.创建 /etc/rc.local 文件
+
+vim /etc/rc.local
+----------------------------------------------------
+#!/bin/sh
+# /etc/rc.local
+if test -d /etc/rc.local.d; then
+    for rcscript in /etc/rc.local.d/*.sh; do
+        test -r "${rcscript}" && sh ${rcscript}
+    done
+    unset rcscript
+fi
+----------------------------------------------------
+3.添加执行权限
+chmod a+x /etc/rc.local
+
+mkdir /etc/rc.local.d
+
+systemctl enable rc-local
+
+把sh脚本放在/etc/rc.local.d/文件夹中就行
 
 ==============================  输入法fcitx5
 
 
 
-sudo pacman -S  fcitx5-im     fcitx5-chinese-addons fcitx5-pinyin-moegirl  fcitx5-pinyin-zhwiki 
+yay -S  fcitx5-im     fcitx5-chinese-addons fcitx5-pinyin-moegirl  fcitx5-pinyin-zhwiki
 
 
 
@@ -62,7 +105,6 @@ sudo pacman -Scc                        已下载的包
 
 
 1.nvim配置
-
 xunlei-bin      baidu-translate-client-bin   wps-office-mui-zh-cn ttf-wps-fonts   wps-office-cn
 
 
