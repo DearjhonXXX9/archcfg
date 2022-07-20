@@ -43,8 +43,8 @@ Plug 'tpope/vim-repeat'                   " 配合上一个插件使用，可以
 Plug 'flazz/vim-colorschemes'             " Colorschemes 通过命令:colorscheme {theme}来改变主题
 Plug 'tpope/vim-fugitive'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
-" Plug 'terryma/vim-multiple-cursors'       " vim多光标
-"Plug 'glepnir/dashboard-nvim'            " 开始面板 导航   现在不知道怎么设置自启
+
+
 
 "-------------------=== Snippets support ===--------------------
 
