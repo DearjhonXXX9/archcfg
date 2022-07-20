@@ -1,20 +1,18 @@
 #!/bin/sh
-cp -rvp ./i3/ ~/.config/
-cp -rvp ./i3status/ ~/.config/
-cp -rvp ./termite/ ~/.config/
-cp -rvp ./ranger/ ~/.config/
-cp -rvp ./polybar/ ~/.config/
-cp -rvp ./twmn/ ~/.config/
+cp -r ./i3 ~/.config/
+cp -r ./i3status ~/.config/
+cp -r ./termite ~/.config/
+cp -r ./ranger ~/.config/
+cp -r ./polybar ~/.config/
+cp -r ./twmn ~/.config/
 
-cp -vp ./.i3lock-gen-image.sh ~/
-cp -vp ./.sfw.sh ~/
-cp -vp ./.nsfw.sh ~/
-cp -vp ./.lockscreen.sh ~/
-cp -vp ./.start.sh ~/
-cp -vp ./.randomwallpaper.sh ~/
+cp ./.i3lock-gen-image.sh ~/
+cp ./.sfw.sh ~/
+cp ./.nsfw.sh ~/
+cp ./.lockscreen.sh ~/
+cp ./.start.sh ~/
+cp ./.randomwallpaper.sh ~/
 
-
-cp -rvp ./.wallpaper/ ~/
-cp -r ./i3status-rust/ ~/.config/
+cp -r ./.wallpaper ~/
+cp -r ./i3status-rust ~/.config/
 echo "Done. please relogin into i3"
-
