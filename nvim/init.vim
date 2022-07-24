@@ -29,7 +29,7 @@ Plug 'majutsushi/tagbar'                  " 显示类，变量之类的标签插
 "Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }   " 模糊搜索插件
 Plug 'kien/ctrlp.vim'                     " 模糊搜索文件 ctrl p
 Plug 'tpope/vim-markdown'                   " markdown
-Plug 'instant-markdown/vim-instant-markdown'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 
 "-------------------=== Other ===-------------------------------
@@ -192,8 +192,8 @@ function! ToggleNerdTree()
     set eventignore=
 endfunction
 
-autocmd vimenter * NERDTree ~/Documents/coding
-
+" autocmd vimenter * NERDTree ~/Documents/coding
+autocmd vimenter * NERDTree ~/TEST
 "=====================================================
 "" Python settings
 "=====================================================
